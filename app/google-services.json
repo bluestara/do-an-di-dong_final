@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1056190838394",
+    "firebase_url": "https://nomorepleze-84159.firebaseio.com",
+    "project_id": "nomorepleze-84159",
+    "storage_bucket": "nomorepleze-84159.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056190838394:android:ed6008b1fed3773045adc3",
+        "android_client_info": {
+          "package_name": "com.example.nomorepleze"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056190838394-0oa2usfli64g17dn6osjce37cfllbbcq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nomorepleze",
+            "certificate_hash": "630092a8066ec739f0774e2e28d90c5b50b07c5e"
+          }
+        },
+        {
+          "client_id": "1056190838394-t8eq7ruj0qhsnma520kitmr5qotpa673.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjLciGxqn0f3F1qAyDfdMb4lVBLWSmSeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056190838394-t8eq7ruj0qhsnma520kitmr5qotpa673.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

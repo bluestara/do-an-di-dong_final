@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/account"
+android:layout_height="match_parent">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/ic_stat_person"
+        app:civ_border_color="#ffffff"
+        app:civ_border_width="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+
+
+    <TextView
+        android:id="@+id/log_out"
+        android:layout_width="134dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/berkshire_swash"
+        android:gravity="center"
+        android:text="Sign out"
+        android:textColor="#FDFBFB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/circle_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="152dp"
+        android:background="@drawable/circle_btn"
+        android:drawableTop="@drawable/ic_stat_edit"
+        android:fontFamily="@font/berkshire_swash"
+        android:padding="12dp"
+        android:text="EDIT"
+        android:textColor="#F8F8F8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.396">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/ic_action_name"
+            android:fontFamily="@font/berkshire_swash"
+            android:gravity="center_vertical"
+            android:text="Profile Name :"
+            android:textColor="#FDFDFD"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/name_signup"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:textColor="#FFFEFE" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/ic_action_email"
+            android:fontFamily="@font/berkshire_swash"
+            android:gravity="center_vertical"
+            android:text="Email :"
+            android:textColor="#FDFDFD" />
+
+        <TextView
+            android:id="@+id/email_signup"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:inputType="textEmailAddress"
+            android:text="Email"
+            android:textColor="#ffffff"
+            tools:layout_editor_absoluteY="681dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.603">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/ic_action_lock"
+            android:fontFamily="@font/berkshire_swash"
+            android:gravity="center_vertical"
+            android:text="Password :"
+            android:textColor="#FDFDFD" />
+
+        <TextView
+            android:id="@+id/password_signup"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:text="Password"
+            android:textColor="#FFFFFF"
+            tools:layout_editor_absoluteX="246dp"
+            tools:layout_editor_absoluteY="361dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="138dp"
+            android:layout_height="51dp"
+            android:drawableLeft="@drawable/ic_action_phone"
+            android:fontFamily="@font/berkshire_swash"
+            android:gravity="center_vertical"
+            android:text="Phone Number :"
+            android:textColor="#FDFDFD" />
+
+        <TextView
+            android:id="@+id/phone_signup"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:text="Phone Number"
+            android:textColor="#FDFDFD"
+            tools:layout_editor_absoluteX="209dp"
+            tools:layout_editor_absoluteY="681dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/signup_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button_white"
+        android:fontFamily="@font/berkshire_swash"
+        android:text="Save change"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.853" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_signup"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="300dp"
+        android:foregroundGravity="center_horizontal"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

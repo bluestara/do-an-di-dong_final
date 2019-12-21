@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@drawable/saodem"
+        android:fontFamily="@font/coiny"
+        android:gravity="center"
+        android:text="NEWS AND ARTICLES"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        ads:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.0"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        ads:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="550dp"
+        android:layout_marginTop="52dp"
+        android:fillViewport="true"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.0"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        ads:layout_goneMarginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8F7F7"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+                <ImageButton
+                    android:id="@+id/btn1"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:contentDescription="@android:string/emptyPhoneNumber"
+                    android:onClick="launchWebView1"
+                    android:src="@drawable/bp" />
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imagebtn1"
+                    android:text="Line 1"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+                <ImageButton
+                    android:id="@+id/btn3"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:contentDescription="@android:string/emptyPhoneNumber"
+                    android:onClick="launchWebView3"
+                    android:src="@drawable/iu" />
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imagebtn1"
+                    android:text="Line 1"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageButton
+                    android:id="@+id/btn4"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:onClick="launchWebView4"
+                    android:src="@drawable/nhi" />
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imagebtn1"
+                    android:text="Line 1"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+                <ImageButton
+                    android:id="@+id/btn6"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:onClick="launchWebView6"
+                    android:src="@drawable/tshirt" />
+                <TextView
+                    android:id="@+id/text6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imagebtn1"
+                    android:text="Line 1"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageButton
+                    android:id="@+id/btn5"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:onClick="launchWebView5"
+                    android:src="@drawable/somi" />
+                <TextView
+                    android:id="@+id/text7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imagebtn1"
+                    android:text="Line 1"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageButton
+                    android:id="@+id/btn2"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:onClick="launchWebView2"
+                    android:src="@drawable/giolanh" />
+                <TextView
+                    android:id="@+id/text8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imagebtn1"
+                    android:text="Line 1"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageButton
+                    android:id="@+id/btn11"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:onClick="launchWebView5"
+                    android:src="@drawable/somi" />
+                <TextView
+                    android:id="@+id/text9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imagebtn1"
+                    android:text="Line 1"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageButton
+                    android:id="@+id/btn10"
+                    android:layout_width="176dp"
+                    android:layout_height="146dp"
+                    android:onClick="launchWebView2"
+                    android:src="@drawable/giolanh" />
+                <TextView
+                    android:id="@+id/text10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imagebtn1"
+                    android:text="Line 1"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintBottom_toTopOf="parent"
+        ads:layout_constraintEnd_toStartOf="@+id/textView7"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        ads:layout_constraintLeft_toRightOf="parent"
+        ads:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        ads:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+
+        ads:layout_constraintLeft_toLeftOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/savebtn"
+            android:layout_width="120dp"
+            android:layout_height="46dp"
+            android:background="@drawable/saodem"
+            android:layout_gravity="center"
+            android:onClick="launchSaveActivity"
+            android:src="@drawable/ic_stat_sao"
+
+            />
+
+        <ImageButton
+            android:id="@+id/createbtn"
+            android:layout_width="120dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:background="@drawable/saodem"
+            android:src="@drawable/ic_stat_cong"
+            android:onClick="launchCreateActivity"
+            />
+
+        <ImageButton
+            android:id="@+id/accountbtn"
+            android:layout_width="120dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:background="@drawable/saodem"
+            android:onClick="launchAccountActivity"
+            android:src="@drawable/ic_stat_toi" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="393dp"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:id="@+id/text11"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/coiny"
+            android:gravity="center"
+            android:text="Save"
+            android:background="@drawable/saodem"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/text12"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/coiny"
+            android:gravity="center"
+            android:text="Create"
+            android:background="@drawable/saodem"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/text13"
+            android:layout_width="119dp"
+            android:layout_height="30dp"
+            android:background="@drawable/saodem"
+            android:fontFamily="@font/coiny"
+            android:gravity="center"
+            android:text="Me"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
