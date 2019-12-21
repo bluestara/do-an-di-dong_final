@@ -47,7 +47,7 @@ public class CreateActivity extends AppCompatActivity {
     ImageView imageTrousers;
     ImageView imageShoe;
     ImageView imageBag;
-    private ImageButton img;
+
 
     private FirebaseUser mUser;
     private String Uid;
@@ -74,14 +74,7 @@ public class CreateActivity extends AppCompatActivity {
         imageShoe = findViewById(R.id.shoe);
         imageBag = findViewById(R.id.bag);
         mShoot = findViewById(R.id.shoot);
-        img = findViewById(R.id.testbtn);
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(CreateActivity.this, UploadimgActivity.class);
-                startActivity(i);
-            }
-        });
+       
 
 
         mShoot.setOnClickListener(new View.OnClickListener() {
