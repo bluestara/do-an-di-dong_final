@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AccountActivity"/>
+        <activity android:name=".AccountActivity" />
         <activity android:name=".HatActivity" />
         <activity android:name=".ShirtActivity" />
         <activity android:name=".TrousersActivity" />
@@ -24,6 +24,7 @@
         <activity android:name=".ShoeActivity" />
         <activity android:name=".BagActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".UploadimgActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".WebView6" />
         <activity android:name=".WebView5" />

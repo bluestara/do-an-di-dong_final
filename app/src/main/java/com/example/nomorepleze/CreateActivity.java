@@ -1,33 +1,21 @@
 package com.example.nomorepleze;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
-import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.storage.StorageManager;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-import android.webkit.MimeTypeMap;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -36,16 +24,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
-import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.util.Random;
 
 public class CreateActivity extends AppCompatActivity {
@@ -65,6 +47,7 @@ public class CreateActivity extends AppCompatActivity {
     ImageView imageTrousers;
     ImageView imageShoe;
     ImageView imageBag;
+    private ImageButton img;
 
     private FirebaseUser mUser;
     private String Uid;
@@ -91,7 +74,14 @@ public class CreateActivity extends AppCompatActivity {
         imageShoe = findViewById(R.id.shoe);
         imageBag = findViewById(R.id.bag);
         mShoot = findViewById(R.id.shoot);
-
+        img = findViewById(R.id.testbtn);
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CreateActivity.this, UploadimgActivity.class);
+                startActivity(i);
+            }
+        });
 
 
         mShoot.setOnClickListener(new View.OnClickListener() {
