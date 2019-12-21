@@ -74,7 +74,7 @@ public class CreateActivity extends AppCompatActivity {
         imageShoe = findViewById(R.id.shoe);
         imageBag = findViewById(R.id.bag);
         mShoot = findViewById(R.id.shoot);
-       
+
 
 
         mShoot.setOnClickListener(new View.OnClickListener() {
