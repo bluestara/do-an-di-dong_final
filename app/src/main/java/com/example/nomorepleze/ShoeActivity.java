@@ -1,5 +1,6 @@
 package com.example.nomorepleze;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,11 +8,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class ShoeActivity extends AppCompatActivity {
 
-    private ArrayList<ListItem> mShoeList;
+    private ArrayList<item> mShoeList;
 
     private RecyclerView mRecyclerView_shoe;
     private Adapter mAdapter;
@@ -31,16 +38,22 @@ public class ShoeActivity extends AppCompatActivity {
     public void createShoeList(){
         mShoeList = new ArrayList<>();
 
-        mShoeList.add(new ListItem(R.drawable.shoeone, "Line 1", "Line 2" ));
-        mShoeList.add(new ListItem(R.drawable.shoestwo, "Line 3", "Line 4" ));
-        mShoeList.add(new ListItem(R.drawable.shoesthree, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.shoesfour, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.shoesfive, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.shoessix, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.shoesseven, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.shoeseight, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.shoesnine, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.shoesten, "Line 5", "Line 6" ));
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Data/Shoe");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren())
+                {
+                    item temp  = snapshot.getValue(item.class);
+                    mShoeList.add(temp);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
 

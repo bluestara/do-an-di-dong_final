@@ -1,21 +1,24 @@
 package com.example.nomorepleze;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.widget.AdapterView;
-import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class TrousersActivity extends AppCompatActivity {
 
-    private ArrayList<ListItem> mTrousersList;
+    private ArrayList<item> mTrousersList;
 
     private RecyclerView mRecyclerView_trousers;
     private Adapter mAdapter;
@@ -35,16 +38,22 @@ public class TrousersActivity extends AppCompatActivity {
     public void createTrousersList(){
         mTrousersList = new ArrayList<>();
 
-        mTrousersList.add(new ListItem(R.drawable. pantwo, "Line 1", "Line 2" ));
-        mTrousersList.add(new ListItem(R.drawable.pl, "Line 3", "Line 4" ));
-        mTrousersList.add(new ListItem(R.drawable.pantthree, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.pantfour, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.pantfive, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.pantsix, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.pantseven, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.panteight, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.pantnine, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.pantten, "Line 5", "Line 6" ));
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Data/Pant");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren())
+                {
+                    item temp  = snapshot.getValue(item.class);
+                    mTrousersList.add(temp);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
 

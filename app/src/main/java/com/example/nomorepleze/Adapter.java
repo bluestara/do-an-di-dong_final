@@ -2,17 +2,19 @@ package com.example.nomorepleze;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ListViewHolder> {
 
-    private ArrayList<ListItem> mList;
+    private ArrayList<item> mList;
     private OnItemClickListener mListener;
 
     public interface OnItemClickListener{
@@ -26,7 +28,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ListViewHolder> {
 
 
     public static class ListViewHolder extends RecyclerView.ViewHolder{
-        public ImageButton mImageButton;
+        public ImageView mImageButton;
         public TextView mTextView1;
         public TextView mTextView2;
 
@@ -60,17 +62,21 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ListViewHolder> {
         return hvh;
     }
 
-    public Adapter(ArrayList<ListItem> list){
+    public Adapter(ArrayList<item> list){
         mList = list;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
-        ListItem currentItem = mList.get(position);
+        item currentItem = mList.get(position);
 
-        holder.mImageButton.setImageResource(currentItem.getmImageResource());
-        holder.mTextView1.setText(currentItem.getmText1());
-        holder.mTextView2.setText(currentItem.getmText2());
+        Picasso.get().load(currentItem.mImageURI)
+                .fit()
+                .centerCrop()
+                .placeholder(R.mipmap.ic_launcher)
+                .into(holder.mImageButton);
+        holder.mTextView1.setText(currentItem.Name);
+        holder.mTextView2.setText(String.valueOf(currentItem.Price));
     }
 
     @Override

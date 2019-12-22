@@ -1,5 +1,6 @@
 package com.example.nomorepleze;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,11 +8,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class HatActivity extends AppCompatActivity {
 
-    private ArrayList<ListItem> mHatList;
+    private ArrayList<item> mHatList;
 
     private RecyclerView mRecyclerView;
     private Adapter mAdapter;
@@ -31,16 +38,22 @@ public class HatActivity extends AppCompatActivity {
     public void createHatList(){
         mHatList = new ArrayList<>();
 
-        mHatList.add(new ListItem(R.drawable.hatone, "Line 1", "Line 2" ));
-        mHatList.add(new ListItem(R.drawable.hattwo, "Line 3", "Line 4" ));
-        mHatList.add(new ListItem(R.drawable.hatthree, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hatfour, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hatfive, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hatsix, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hatseven, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hateight, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hatnine, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hatten, "Line 5", "Line 6" ));
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Data/Hat");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren())
+                {
+                    item temp  = snapshot.getValue(item.class);
+                    mHatList.add(temp);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
 

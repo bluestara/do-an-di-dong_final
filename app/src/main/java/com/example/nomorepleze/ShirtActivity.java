@@ -1,21 +1,25 @@
 package com.example.nomorepleze;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.widget.AdapterView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class ShirtActivity extends AppCompatActivity {
 
-    private ArrayList<ListItem> mShirtList;
+    private ArrayList<item> mShirtList;
 
     private RecyclerView mRecyclerView_shirt;
     private Adapter mAdapter;
@@ -34,16 +38,30 @@ public class ShirtActivity extends AppCompatActivity {
 
     public void createShirtList(){
         mShirtList = new ArrayList<>();
-        mShirtList.add(new ListItem(R.drawable.shirtone, "Line 1", "Line 2" ));
-        mShirtList.add(new ListItem(R.drawable.aaa, "Line 3", "Line 4" ));
-        mShirtList.add(new ListItem(R.drawable.shirtthree, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.shirtfour, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.shirtfive, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.shirtsix, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.shirtseven, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.shirteight, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.shirtnine, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.shirtten, "Line 5", "Line 6" ));
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Data/Shirt");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren())
+                {
+                    // Quick Fix lỗi chỉ lấy được 1 phần dữ liệu
+                    // Cụ thể là chỉ lấy được Name và Price còn mImageURI không lấy được bằng snapshot.getValue(item.class)
+                    // Buộc phải lấy bằng cách thủ công
+                    //
+                    //Note: Chưa tìm ra nguyên nhân xảy ra lỗi
+                    item temp  = snapshot.getValue(item.class);
+                    String test  = snapshot.child("mImageURL").getValue(String.class);
+                    temp.mImageURI = test;
+                    mShirtList.add(temp);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ShirtActivity.this, databaseError.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
 

@@ -26,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Random;
@@ -165,46 +166,61 @@ public class CreateActivity extends AppCompatActivity {
        if (requestCode == HAT_ACTIVITY_REQUEST_CODE)
             if (resultCode == RESULT_OK)
             {
-                ListItem hatItem = data.getParcelableExtra("keyHat");
+                item hatItem = data.getParcelableExtra("keyHat");
 
-                int imgRes = hatItem.getmImageResource();
-                imageHat.setImageResource(imgRes);
+                Picasso.get().load(hatItem.mImageURI)
+                        .fit()
+                        .placeholder(R.mipmap.ic_launcher)
+                        .centerCrop()
+                        .into(imageHat);
             }
 
        if (requestCode == SHIRT_ACTIVITY_REQUEST_CODE)
            if (resultCode == RESULT_OK)
            {
-                ListItem shirtItem = data.getParcelableExtra("keyShirt");
+                item shirtItem = data.getParcelableExtra("keyShirt");
 
-                int imgRes = shirtItem.getmImageResource();
-                imageShirt.setImageResource(imgRes);
+               Picasso.get().load(shirtItem.mImageURI)
+                       .fit()
+                       .placeholder(R.mipmap.ic_launcher)
+                       .centerCrop()
+                       .into(imageShirt);
            }
 
        if (requestCode == TROUSERS_ACTIVITY_REQUEST_CODE)
            if (resultCode == RESULT_OK)
            {
-                ListItem trousersItem = data.getParcelableExtra("keyTrousers");
+                item trousersItem = data.getParcelableExtra("keyTrousers");
 
-                int imgRes = trousersItem.getmImageResource();
-                imageTrousers.setImageResource(imgRes);
+               Picasso.get().load(trousersItem.mImageURI)
+                       .fit()
+                       .placeholder(R.mipmap.ic_launcher)
+                       .centerCrop()
+                       .into(imageTrousers);
            }
 
        if (requestCode == SHOE_ACTIVITY_REQUEST_CODE)
             if (resultCode == RESULT_OK)
             {
-                ListItem shoeItem = data.getParcelableExtra("keyShoe");
+                item shoeItem = data.getParcelableExtra("keyShoe");
 
-                int imgRes = shoeItem.getmImageResource();
-                imageShoe.setImageResource(imgRes);
+                Picasso.get().load(shoeItem.mImageURI)
+                        .fit()
+                        .placeholder(R.mipmap.ic_launcher)
+                        .centerCrop()
+                        .into(imageShoe);
             }
 
        if (requestCode == BAG_ACTIVITY_REQUEST_CODE)
            if (resultCode == RESULT_OK)
            {
-                ListItem bagItem = data.getParcelableExtra("keyBag");
+                item bagItem = data.getParcelableExtra("keyBag");
 
-                int imgRes = bagItem.getmImageResource();
-                imageBag.setImageResource(imgRes);
+               Picasso.get().load(bagItem.mImageURI)
+                       .fit()
+                       .placeholder(R.mipmap.ic_launcher)
+                       .centerCrop()
+                       .into(imageBag);
            }
 
     }

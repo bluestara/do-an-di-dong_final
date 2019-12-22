@@ -1,5 +1,6 @@
 package com.example.nomorepleze;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,11 +8,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class BagActivity extends AppCompatActivity {
 
-    private ArrayList<ListItem> mBagList;
+    private ArrayList<item> mBagList;
 
     private RecyclerView mRecyclerView_bag;
     private Adapter mAdapter;
@@ -31,16 +38,22 @@ public class BagActivity extends AppCompatActivity {
     public void createBagList(){
         mBagList = new ArrayList<>();
 
-        mBagList.add(new ListItem(R.drawable.bagone, "Line 1", "Line 2" ));
-        mBagList.add(new ListItem(R.drawable.bagtwo, "Line 3", "Line 4" ));
-        mBagList.add(new ListItem(R.drawable.bagthree, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.bagfour, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.bagfive, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.bagsix, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.bagseven, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.bageight, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.bagnine, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.bagten, "Line 5", "Line 6" ));
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Data/Bag");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren())
+                {
+                    item temp  = snapshot.getValue(item.class);
+                    mBagList.add(temp);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
 
