@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/account">
+
+    app:cardCornerRadius="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_margin="4dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imagebtn1"
+            android:layout_width="106dp"
+            android:layout_height="65dp"
+            android:background="#FFFFFF"
+            android:padding="40dp"
+            app:srcCompat="@drawable/hatba" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imagebtn1"
+            android:text="Item Name"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text1"
+            android:layout_toEndOf="@+id/imagebtn1"
+            android:text="price"
+            android:textSize="30sp" />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

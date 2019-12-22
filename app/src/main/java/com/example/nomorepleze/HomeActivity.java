@@ -103,4 +103,35 @@ public class HomeActivity extends AppCompatActivity {
         Intent intentrecycle = new Intent(this, WebView6.class);
         startActivity(intentrecycle);
     }
+    public void launchWebView7(View view) {
+        Log.d(LOG_TAG, "TextView Clicked!");
+        Intent intentrecycle = new Intent(this, WebView1.class);
+        startActivity(intentrecycle);
+    }
+    public void launchWebView8(View view) {
+        Log.d(LOG_TAG, "TextView Clicked!");
+        Intent intentrecycle = new Intent(this, WebView1.class);
+        startActivity(intentrecycle);
+    }
+    public void launchWebView9(View view) {
+        Log.d(LOG_TAG, "TextView Clicked!");
+        Intent intentrecycle = new Intent(this, WebView1.class);
+        startActivity(intentrecycle);
+    }
+    public void launchWebView10(View view) {
+        Log.d(LOG_TAG, "TextView Clicked!");
+        Intent intentrecycle = new Intent(this, WebView1.class);
+        startActivity(intentrecycle);
+    }
+    public void launchWebView11(View view) {
+        Log.d(LOG_TAG, "TextView Clicked!");
+        Intent intentrecycle = new Intent(this, WebView1.class);
+        startActivity(intentrecycle);
+    }
+    public void launchWebView12(View view) {
+        Log.d(LOG_TAG, "TextView Clicked!");
+        Intent intentrecycle = new Intent(this, WebView1.class);
+        startActivity(intentrecycle);
+    }
+
 }

@@ -18,8 +18,7 @@ public class WebView3 extends AppCompatActivity {
 
         webView = (WebView) findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://guu.vn/khong-nhan-ra-iu-voi-toc-tim-sieu-la-lam-visual-mot-lan-nua-dat-toi-do-than-tien-SmKAnGW6Qjw1Z.html");
-
+        webView.loadUrl("https://guu.vn/khong-the-du-dam-cuoi-dong-nhi-vi-so-vo-chum-lan-khue-o-nha-van-len-do-quay-nhiet-GeHrqB6OEJL3R.html");
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
     }

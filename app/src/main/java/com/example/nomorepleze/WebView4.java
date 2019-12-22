@@ -18,6 +18,7 @@ public class WebView4 extends AppCompatActivity {
 
         webView = (WebView) findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://guu.vn/guu-thoi-trang-nam-bien-tau-thu-vi-cung-nhung-chiec-somi-don-gian-Nr8bq58CecHmC.html");
         webView.loadUrl("https://guu.vn/khong-the-du-dam-cuoi-dong-nhi-vi-so-vo-chum-lan-khue-o-nha-van-len-do-quay-nhiet-GeHrqB6OEJL3R.html");
 
         WebSettings webSettings = webView.getSettings();

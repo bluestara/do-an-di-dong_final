@@ -19,7 +19,6 @@ public class WebView1 extends AppCompatActivity {
         webView = (WebView) findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("https://guu.vn/jennie-dung-la-dieu-nhat-black-pink-chon-tui-cung-phai-tong-xuyet-tong-voi-trang-phuc-moi-chiu-2rVk9ZeV8rQpI.html");
-
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
     }

@@ -18,7 +18,7 @@ public class WebView6 extends AppCompatActivity {
 
         webView = (WebView) findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://guu.vn/phoi-do-bui-bam-va-nam-tinh-voi-t-shirt-trang-BjuqZUcKN6iZT.html");
+        webView.loadUrl("https://guu.vn/mac-dep-ngay-gio-lanh-CPManrgN3NhlP.html");
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
