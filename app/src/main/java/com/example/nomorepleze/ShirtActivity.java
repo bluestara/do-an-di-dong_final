@@ -67,7 +67,7 @@ public class ShirtActivity extends AppCompatActivity {
 
 
     public void buildRecyclerView(){
-        mRecyclerView_shirt = findViewById(R.id.recyclerView);
+        mRecyclerView_shirt = findViewById(R.id.recyclerView_item_order);
         mRecyclerView_shirt.setHasFixedSize(true);
         mLayoutManager_shirt = new LinearLayoutManager(this);
         mAdapter = new Adapter(mShirtList);

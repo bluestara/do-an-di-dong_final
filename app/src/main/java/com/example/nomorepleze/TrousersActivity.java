@@ -45,6 +45,8 @@ public class TrousersActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
                     item temp  = snapshot.getValue(item.class);
+                    String test  = snapshot.child("mImageURL").getValue(String.class);
+                    temp.mImageURI = test;
                     mTrousersList.add(temp);
                 }
             }
@@ -59,7 +61,7 @@ public class TrousersActivity extends AppCompatActivity {
 
 
     public void buildRecyclerView(){
-        mRecyclerView_trousers = findViewById(R.id.recyclerView);
+        mRecyclerView_trousers = findViewById(R.id.recyclerView_item_order);
         mRecyclerView_trousers.setHasFixedSize(true);
         mLayoutManager_trousers = new LinearLayoutManager(this);
         mAdapter = new Adapter(mTrousersList);

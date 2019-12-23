@@ -118,15 +118,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/testbtn"
-        android:layout_width="120dp"
-        android:layout_height="46dp"
+        android:id="@+id/button_go_to_order_activity"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
-        android:background="@drawable/saodem"
-        android:src="@drawable/ic_stat_cong"
-
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/cart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

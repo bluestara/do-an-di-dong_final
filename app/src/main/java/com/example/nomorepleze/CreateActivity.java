@@ -29,6 +29,8 @@ import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class CreateActivity extends AppCompatActivity {
@@ -48,6 +50,7 @@ public class CreateActivity extends AppCompatActivity {
     ImageView imageTrousers;
     ImageView imageShoe;
     ImageView imageBag;
+    ArrayList<item> itemChosen;
     private ImageButton img;
 
     private FirebaseUser mUser;
@@ -57,6 +60,7 @@ public class CreateActivity extends AppCompatActivity {
 
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,11 +79,16 @@ public class CreateActivity extends AppCompatActivity {
         imageShoe = findViewById(R.id.shoe);
         imageBag = findViewById(R.id.bag);
         mShoot = findViewById(R.id.shoot);
-        img = findViewById(R.id.testbtn);
+        img = findViewById(R.id.button_go_to_order_activity);
+        itemChosen =new ArrayList<>();
+
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(CreateActivity.this, UploadimgActivity.class);
+                Intent i = new Intent(CreateActivity.this, OrderActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList("ITEM_ORDER",itemChosen);
+                i.putExtras(bundle);
                 startActivity(i);
             }
         });
@@ -173,6 +182,7 @@ public class CreateActivity extends AppCompatActivity {
                         .placeholder(R.mipmap.ic_launcher)
                         .centerCrop()
                         .into(imageHat);
+                itemChosen.add(hatItem);
             }
 
        if (requestCode == SHIRT_ACTIVITY_REQUEST_CODE)
@@ -185,6 +195,7 @@ public class CreateActivity extends AppCompatActivity {
                        .placeholder(R.mipmap.ic_launcher)
                        .centerCrop()
                        .into(imageShirt);
+               itemChosen.add(shirtItem);
            }
 
        if (requestCode == TROUSERS_ACTIVITY_REQUEST_CODE)
@@ -197,6 +208,7 @@ public class CreateActivity extends AppCompatActivity {
                        .placeholder(R.mipmap.ic_launcher)
                        .centerCrop()
                        .into(imageTrousers);
+               itemChosen.add(trousersItem);
            }
 
        if (requestCode == SHOE_ACTIVITY_REQUEST_CODE)
@@ -209,6 +221,7 @@ public class CreateActivity extends AppCompatActivity {
                         .placeholder(R.mipmap.ic_launcher)
                         .centerCrop()
                         .into(imageShoe);
+                itemChosen.add(shoeItem);
             }
 
        if (requestCode == BAG_ACTIVITY_REQUEST_CODE)
@@ -221,6 +234,7 @@ public class CreateActivity extends AppCompatActivity {
                        .placeholder(R.mipmap.ic_launcher)
                        .centerCrop()
                        .into(imageBag);
+               itemChosen.add(bagItem);
            }
 
     }

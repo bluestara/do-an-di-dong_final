@@ -2,7 +2,6 @@ package com.example.nomorepleze;
 
 
 import android.content.Intent;
-import android.media.MediaCodec;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -21,9 +20,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-
-import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
     private EditText emailId, password, numberphone, fullname;
@@ -40,12 +36,12 @@ public class SignUpActivity extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar_signup);
         progressBar.setVisibility(View.GONE);
-        emailId = findViewById(R.id.email_signup);
+        emailId = findViewById(R.id.text_view_total_money);
         password = findViewById(R.id.password_signup);
-        numberphone = findViewById(R.id.phone_signup);
-        fullname = findViewById(R.id.name_signup);
+        numberphone = findViewById(R.id.edit_text_order_phone);
+        fullname = findViewById(R.id.edit_text_order_address);
         txtSignIn = findViewById(R.id.signin_signup);
-        btnSignUp = findViewById(R.id.signup_signup);
+        btnSignUp = findViewById(R.id.button_order);
         btnSignUp.setOnClickListener(new View.OnClickListener() {
 
             @Override

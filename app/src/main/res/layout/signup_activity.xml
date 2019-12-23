@@ -28,7 +28,7 @@ android:background="@drawable/good_morning_img"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/email_signup"
+        android:id="@+id/text_view_total_money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -65,10 +65,10 @@ android:background="@drawable/good_morning_img"
         android:textCursorDrawable="@drawable/black_cursor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/text_view_total_money" />
 
     <EditText
-        android:id="@+id/name_signup"
+        android:id="@+id/edit_text_order_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -87,7 +87,7 @@ android:background="@drawable/good_morning_img"
         app:layout_constraintTop_toBottomOf="@+id/password_signup" />
 
     <EditText
-        android:id="@+id/phone_signup"
+        android:id="@+id/edit_text_order_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -103,7 +103,7 @@ android:background="@drawable/good_morning_img"
         android:textCursorDrawable="@drawable/black_cursor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_order_address" />
 
     <ProgressBar
         android:id="@+id/progressBar_signup"
@@ -117,7 +117,7 @@ android:background="@drawable/good_morning_img"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <Button
-        android:id="@+id/signup_signup"
+        android:id="@+id/button_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -129,7 +129,7 @@ android:background="@drawable/good_morning_img"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_order_phone" />
     <TextView
         android:id="@+id/signin_signup"
         android:layout_width="wrap_content"
@@ -142,5 +142,5 @@ android:background="@drawable/good_morning_img"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/button_order" />
 </androidx.constraintlayout.widget.ConstraintLayout>

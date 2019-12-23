@@ -45,6 +45,8 @@ public class BagActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
                     item temp  = snapshot.getValue(item.class);
+                    String test  = snapshot.child("mImageURL").getValue(String.class);
+                    temp.mImageURI = test;
                     mBagList.add(temp);
                 }
             }
@@ -59,7 +61,7 @@ public class BagActivity extends AppCompatActivity {
 
 
     public void buildRecyclerView(){
-        mRecyclerView_bag = findViewById(R.id.recyclerView);
+        mRecyclerView_bag = findViewById(R.id.recyclerView_item_order);
         mRecyclerView_bag.setHasFixedSize(true);
         mLayoutManager_bag = new LinearLayoutManager(this);
         mAdapter = new Adapter(mBagList);

@@ -45,6 +45,8 @@ public class HatActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
                     item temp  = snapshot.getValue(item.class);
+                    String test  = snapshot.child("mImageURL").getValue(String.class);
+                    temp.mImageURI = test;
                     mHatList.add(temp);
                 }
             }
@@ -59,7 +61,7 @@ public class HatActivity extends AppCompatActivity {
 
 
     public void buildRecyclerView(){
-        mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerView = findViewById(R.id.recyclerView_item_order);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mAdapter = new Adapter(mHatList);
