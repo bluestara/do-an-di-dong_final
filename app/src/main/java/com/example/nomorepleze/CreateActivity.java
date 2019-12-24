@@ -51,6 +51,11 @@ public class CreateActivity extends AppCompatActivity {
     ImageView imageShoe;
     ImageView imageBag;
     ArrayList<item> itemChosen;
+    item prevHatItem = null;
+    item prevShirtItem = null;
+    item prevBagItem = null;
+    item prevShoeItem = null;
+    item prevTrouserItem = null;
     private ImageButton img;
 
     private FirebaseUser mUser;
@@ -182,7 +187,9 @@ public class CreateActivity extends AppCompatActivity {
                         .placeholder(R.mipmap.ic_launcher)
                         .centerCrop()
                         .into(imageHat);
+                if(prevHatItem != null) itemChosen.remove(prevHatItem);
                 itemChosen.add(hatItem);
+                prevHatItem = hatItem;
 
             }
 
@@ -196,7 +203,9 @@ public class CreateActivity extends AppCompatActivity {
                        .placeholder(R.mipmap.ic_launcher)
                        .centerCrop()
                        .into(imageShirt);
+               if (prevShirtItem != null) itemChosen.remove(prevShirtItem);
                itemChosen.add(shirtItem);
+               prevShirtItem = shirtItem;
            }
 
        if (requestCode == TROUSERS_ACTIVITY_REQUEST_CODE)
@@ -209,7 +218,9 @@ public class CreateActivity extends AppCompatActivity {
                        .placeholder(R.mipmap.ic_launcher)
                        .centerCrop()
                        .into(imageTrousers);
+               if(prevTrouserItem != null) itemChosen.remove(prevTrouserItem);
                itemChosen.add(trousersItem);
+               prevTrouserItem = trousersItem;
            }
 
        if (requestCode == SHOE_ACTIVITY_REQUEST_CODE)
@@ -222,7 +233,9 @@ public class CreateActivity extends AppCompatActivity {
                         .placeholder(R.mipmap.ic_launcher)
                         .centerCrop()
                         .into(imageShoe);
+                if (prevShoeItem !=null) itemChosen.remove(prevShoeItem);
                 itemChosen.add(shoeItem);
+                prevShoeItem = shoeItem;
             }
 
        if (requestCode == BAG_ACTIVITY_REQUEST_CODE)
@@ -235,7 +248,9 @@ public class CreateActivity extends AppCompatActivity {
                        .placeholder(R.mipmap.ic_launcher)
                        .centerCrop()
                        .into(imageBag);
+               if(prevBagItem != null) itemChosen.remove(prevBagItem);
                itemChosen.add(bagItem);
+               prevBagItem = bagItem;
            }
 
     }
