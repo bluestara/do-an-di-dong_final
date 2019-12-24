@@ -183,6 +183,7 @@ public class CreateActivity extends AppCompatActivity {
                         .centerCrop()
                         .into(imageHat);
                 itemChosen.add(hatItem);
+
             }
 
        if (requestCode == SHIRT_ACTIVITY_REQUEST_CODE)
