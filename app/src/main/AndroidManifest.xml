@@ -25,7 +25,6 @@
         <activity android:name=".ShoeActivity" />
         <activity android:name=".BagActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".UploadimgActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".WebView6" />
         <activity android:name=".WebView5" />
