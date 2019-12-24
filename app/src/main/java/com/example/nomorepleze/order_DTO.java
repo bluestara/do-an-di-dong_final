@@ -1,12 +1,12 @@
 package com.example.nomorepleze;
 
+import java.util.ArrayList;
+
 public class order_DTO {
     public String phonneNumber;
     public String address;
     public double total;
-    public item Bag;
-    public item Shirt;
-    public item Hat;
-    public item Trouser;
-    public item Shoe;
+    public String userName;
+    public ArrayList<item> items;
+    public boolean isOrderConfirm;
 }

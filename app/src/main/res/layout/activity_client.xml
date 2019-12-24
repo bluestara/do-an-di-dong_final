@@ -29,11 +29,11 @@
             android:text="Phone Number :"
             android:textColor="#FDFDFD" />
 
-        <TextView
+        <EditText
             android:id="@+id/edit_text_order_phone"
             android:layout_width="140dp"
             android:layout_height="50dp"
-            android:text="Phone Number"
+            android:hint="Phone Number"
             android:textColor="#FDFDFD"
             tools:layout_editor_absoluteX="209dp"
             tools:layout_editor_absoluteY="681dp" />
@@ -53,7 +53,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_item_order"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="132dp"
         android:background="#000000"
@@ -91,12 +91,12 @@
             android:textColor="#FDFDFD"
             app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
+        <EditText
             android:id="@+id/edit_text_order_address"
             android:layout_width="140dp"
             android:layout_height="50dp"
             android:inputType="textPersonName"
-            android:text="99/18"
+            android:hint="99/18"
             android:textColor="#FFFEFE" />
 
 
